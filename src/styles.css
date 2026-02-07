@@ -113,6 +113,62 @@ body {
   color: var(--white);
 }
 
+/* Make the PROJECTS button look like the other sidebar links */
+.sidebar .projects-link {
+  appearance: none;
+  -webkit-appearance: none;
+
+  background: transparent;
+  border: 0;
+  outline: none;
+
+  display: block;
+  width: 100%;
+
+  color: var(--black);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  padding: 20px 15px;
+  margin: 0;
+
+  text-align: left;
+  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+/* Same hover fill effect as your <a> links */
+.sidebar .projects-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: var(--black);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.sidebar .projects-link:hover::before {
+  width: 100%;
+}
+
+.sidebar .projects-link:hover {
+  color: var(--white);
+}
+
+/* Optional: nice keyboard focus */
+.sidebar .projects-link:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 4px;
+}
+
 
 /* Main Content Area */
 .main-content {
