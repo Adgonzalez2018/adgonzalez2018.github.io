@@ -138,9 +138,15 @@ function App() {
         <nav>
           <a href="#home">HOME</a>
           <a href="#blog">BLOG</a>
-          <a onClick={toggleProjects} className="projects-link">
+          <button
+            type="button"
+            onClick={toggleProjects}
+            className="Projects-link"
+            aria-expanded={projectsOpen}
+            aria-controls="projects-submenu"
+          >
             PROJECTS
-          </a>
+              </button>
           <div className={`projects-submenu ${projectsOpen ? "open" : ""}`}>
             <a href="#projects-software">SOFTWARE</a>
             <a href="#projects-creative">CREATIVE</a>
