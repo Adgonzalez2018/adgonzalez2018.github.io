@@ -147,7 +147,8 @@ function App() {
           >
             PROJECTS
               </button>
-          <div className={`projects-submenu ${projectsOpen ? "open" : ""}`}>
+          <div id="projects-submenu"
+              className={`projects-submenu ${projectsOpen ? "open" : ""}`}>
             <a href="#projects-software">SOFTWARE</a>
             <a href="#projects-creative">CREATIVE</a>
           </div>
