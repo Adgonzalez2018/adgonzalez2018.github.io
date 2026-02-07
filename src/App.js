@@ -63,7 +63,7 @@ function App() {
     return date.toLocaleDateString("en-US", options);
   };
 
-  // Sample papers data - replace with your actual papers
+  // research work
   const papers = [
     {
       title: "Pressure-Aware Resource Management for Resident LLM Services ",
@@ -85,7 +85,7 @@ function App() {
     },
   ];
 
-  // Blog posts data - add new posts at the top
+  // Blog posts
   const blogPosts = [
     {
       title: "Research Update: DPO and LLM Judges",
@@ -99,7 +99,7 @@ function App() {
       content:
         "Started working on a new web app for film recommendations. Using collaborative filtering and content-based approaches to suggest movies based on viewing history and preferences.",
     },
-    // Add more blog posts here
+    
   ];
 
   // Helper function to format blog post dates
@@ -112,7 +112,7 @@ function App() {
     return date.toLocaleDateString("en-US", options);
   };
 
-  // Sample creative work - replace with your actual images/videos
+  // Creative Work
   const creativeWork = [
     {
       type: "video",
@@ -120,26 +120,12 @@ function App() {
       thumbnail: "https://img.youtube.com/vi/m-i2pUUVxGU/maxresdefault.jpg",
       link: "https://www.youtube.com/embed/m-i2pUUVxGU?si=RXFsUtKGNN-zHzFj",
     },
-    /*
-    {
-      type: "image",
-      title: "Photo Series 1",
-      thumbnail: "https://via.placeholder.com/400x300",
-      link: "#",
-    },*/
     {
       type: "video",
       title: "You Can See Now? (Edit)",
       thumbnail: "https://img.youtube.com/vi/XDX2wK-bW6I/maxresdefault.jpg",
       link: "https://www.youtube.com/embed/XDX2wK-bW6I?si=X_zO1qZpzKSshOKM",
     },
-    /*
-    {
-      type: "image",
-      title: "Photo Series 2",
-      thumbnail: "https://via.placeholder.com/400x300",
-      link: "#",
-    },*/
   ];
 
   return (
