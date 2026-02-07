@@ -76,6 +76,23 @@ body {
   border-bottom: 2px solid var(--black);
 }
 
+.sidebar button {
+  color: var(--black);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 20px 15px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+}
+
 /* Main Content Area */
 .main-content {
   margin-left: var(--sidebar-width);
