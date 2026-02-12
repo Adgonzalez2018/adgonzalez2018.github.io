@@ -88,6 +88,12 @@ function App() {
   // Blog posts
   const blogPosts = [
     {
+      title: "Electric Field Lines Music Video Update",
+      date: new Date("2026-02-11"),
+      content:
+        "Just finished half of a music video I started last year. I animated a web app that I scraped from the internet that my old physics teacher gave me, and made animations thru it. Recorded it and haven't touched it til this month.",
+    },
+    {
       title: "Research Update: DPO and LLM Judges",
       date: new Date("2026-02-03"),
       content:
