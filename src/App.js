@@ -284,23 +284,18 @@ function App() {
           <div className="section-content">
             <h2>ABOUT ME</h2>
             <p className="placeholder">
-              I'm Alex, currently located in New York, NY. <br />
-              I'm a master's student studying Computer Engineering at NYU.
-              Focusing heavily on Machine Learning. I also have background and
-              experience with web/android apps from graduate/undergraduate. I've
-              been doing a lot of research in AI, writing papers and conducting
-              experiments. I'm very interested in research in NLP, and working
-              in Applied ML. I'm also interested in working and designing web
-              apps. Currently doing research with DPO and rubric optimization,
-              and working on a web app for film recommendations
+              I'm Alex, a Master's Student in Computer Engineering at NYU Graduating May 2026, 
+              currently located in New York, NY. <br />
+              My work sits at the intersection of Machine Learning and applied AI, 
+              I focus heavilty on NLP, LLM evaluation, and building reliable AI-powered systems.
+              Currently, I'm conducting research on DPO and rubric optimization, and 
+              independently developing a full-stack film recommendation platform powered
+              by a RAG pipeline. I'm actively looking for roles in Applied ML and AI 
+              engineering where I can bridge technical rigor and real-world impact.
               <br />
               Alongside my technical/logical side of my life, I'm also just as
-              passionate about movies and filmmaking. Last year (2025), I
-              watched 374 (unique) movies. In my spare time I write screenplays,
-              and work on developing music videos. I've made visualizers using
-              code that I've scraped from the internet and turned it into my
-              own. Also just made a documentary, and continue to create more
-              short films/music videos soon!
+              passionate about movies and storytelling. In 2025, I watched 374 movies.
+              I write screenplays, direct music videos, and recently completed a documentary.
             </p>
           </div>
         </section>
