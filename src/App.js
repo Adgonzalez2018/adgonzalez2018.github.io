@@ -63,6 +63,17 @@ function App() {
     return date.toLocaleDateString("en-US", options);
   };
 
+  const drawings = [
+    "EYE.PNG", "IMG_4128.jpg", "IMG_4168.jpg", "IMG_4169.JPG", "IMG_4197.JPG",
+    "IMG_4233.JPG", "IMG_4248.JPG", "IMG_4283.PNG", "IMG_4292.PNG", "IMG_4293.jpg",
+    "IMG_4363.JPG", "IMG_4743.PNG", "IMG_5944.PNG", "IMG_5945.jpg", "IMG_5946.jpg",
+    "IMG_5947.jpg", "IMG_5948.jpg", "IMG_5949.jpg", "IMG_5950.jpg", "IMG_5952.jpg",
+    "IMG_5954.jpg", "IMG_5956.jpg", "IMG_5962.PNG", "IMG_5963 2.JPG", "IMG_5963.jpg",
+    "IMG_5964.jpg", "IMG_5965.jpg", "IMG_7163.JPG", "IMG_7744.jpg", "IMG_7767.jpg",
+    "IMG_7769.jpg", "IMG_7770.jpg"
+  ];
+
+  const [drawingsOpen, setDrawingsOpen] = useState(false);
   // research work
   const papers = [
     {
@@ -88,10 +99,41 @@ function App() {
   // Blog posts
   const blogPosts = [
     {
-      title: "Electric Field Lines Music Video Update",
+      title: "2026 Timeline Updates",
+      date: new Date("2026-03-30"),
+      content:
+      "Working on two music videos that will hopefully be out by the summer, and end-goal for the year is to start working on my own animation software. Planning on improving the film rec website until the day I die even after it's complete (which it's pretty much deployable). Also trying to finish a screenplay before summer..."
+    },
+    {
+      title: "Film Recommendation",
+      date: new Date("2026-03-27"),
+      content:
+        "I started working on this website in early February, a film recommendation website that give you last.fm style stats of your all-time stats, weekly stats of your music. Based around your letterboxd and a AI-powered film recommendation chat, it's functional but low quality, so I'm planning on doing some experiments on the chat and trying to get better results."
+    },
+        {
+      title: "EFL Book",
+      date: new Date("2026-03-23"),
+      content:
+        "Planning on working on a book for my EFL visualizer, ~70 pages, consisting of the words, photos, and stills of the video. They're gonna be small A6 style books. I intend on placing them around the library and hopefully to friend with a little preface and QR code to the video."
+    },
+    {
+      title: "Welcome To The Pearly Gates",
+      date: new Date("2026-03-22"),
+      content:
+        "Just made a 3.5m visualizer for a 'Video Tape' inspired song, made with my friend, inspiration and ideas are in the description of the video, check it out! This is for a Google Fellowship, specifically for a Technical Motion Artist Role."
+    },
+
+    {
+      title: "Electric Field Lines Out Now!",
+      date: new Date("2026-03-12"),
+      content:
+        "Finally released the Electric Field Lines - Visualizer, it took me 20+ hours editing, I also released a behind the scenes (BTS) which are recordings of my screen while editing. I also asked for some music that also helped create Welcome To The Pearly Gates."
+    },
+    {
+      title: "Electric Field Lines Update",
       date: new Date("2026-02-11"),
       content:
-        "Just finished half of a music video I started last year. I animated a web app that I scraped from the internet that my old physics teacher gave me, and made animations thru it. Recorded it and haven't touched it til this month.",
+        "animated a web app that I scraped from the internet that my old physics teacher gave me, and made animations thru it. Recorded it and haven't touched it til this month.",
     },
     {
       title: "Research Update: DPO and LLM Judges",
@@ -120,17 +162,35 @@ function App() {
 
   // Creative Work
   const creativeWork = [
+      {
+    type: "video",
+    title: "Welcome To the Pearly Gates",
+    thumbnail: "https://img.youtube.com/vi/wQf5BrMJPtE/maxresdefault.jpg",
+    link: "https://www.youtube.com/watch?v=wQf5BrMJPtE",
+  },
+  {
+    type: "video",
+    title: "Electric Field Lines - BTS",
+    thumbnail: "https://img.youtube.com/vi/_0jGNyEQvg0/maxresdefault.jpg",
+    link: "https://www.youtube.com/watch?v=_0jGNyEQvg0",
+  },
+  {
+    type: "video",
+    title: "Electric Field Lines - Visualizer",
+    thumbnail: "https://img.youtube.com/vi/IQDgEb3meFk/maxresdefault.jpg",
+    link: "https://www.youtube.com/watch?v=IQDgEb3meFk",
+  },
     {
       type: "video",
       title: "Getting Better - Beatles (Visualizer)",
       thumbnail: "https://img.youtube.com/vi/m-i2pUUVxGU/maxresdefault.jpg",
-      link: "https://www.youtube.com/embed/m-i2pUUVxGU?si=RXFsUtKGNN-zHzFj",
+      link: "https://youtube.com/watch?v=XDX2wK-bW6I",
     },
     {
       type: "video",
       title: "You Can See Now? (Edit)",
       thumbnail: "https://img.youtube.com/vi/XDX2wK-bW6I/maxresdefault.jpg",
-      link: "https://www.youtube.com/embed/XDX2wK-bW6I?si=X_zO1qZpzKSshOKM",
+      link: "https://youtube.com/watch?v=XDX2wK-bW6I",
     },
   ];
 
@@ -276,6 +336,30 @@ function App() {
                 </a>
               ))}
             </div>
+                        {/* Drawings Toggle */}
+            <div className="drawings-section">
+              <button
+                type="button"
+                className="drawings-toggle"
+                onClick={() => setDrawingsOpen(!drawingsOpen)}
+              >
+                DRAWINGS {drawingsOpen ? "▲" : "▼"}
+              </button>
+
+              {drawingsOpen && (
+                <div className="drawings-grid">
+                  {drawings.map((file, index) => (
+                    <div key={index} className="drawing-item">
+                      <img
+                        src={`/drawings/${file}`}
+                        alt={file.replace(/\.[^.]+$/, "")}
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </section>
 
@@ -306,6 +390,7 @@ function App() {
         <p>Alex Gonzalez</p>
         <p>
           <a href="mailto:adgonzalez2023@gmail.com">adgonzalez2023@gmail.com</a>
+          <a href="https://github.com/Adgonzalez2018/" target="_blank" rel="noopener noreferrer">Github</a>
         </p>
       </div>
     </div>
