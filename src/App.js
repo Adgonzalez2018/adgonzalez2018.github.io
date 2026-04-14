@@ -367,11 +367,22 @@ function MainSite() {
       <div className="footer-contact">
         <p>Alex Gonzalez</p>
         <p>
-          <a href="mailto:adgonzalez2023@gmail.com">adgonzalez2023@gmail.com</a>
-          <a href="https://github.com/Adgonzalez2018/" target="_blank" rel="noopener noreferrer"style="white-space: pre-line">
-            Github
-          </a>
-        </p>
+            <a href="mailto:adgonzalez2023@gmail.com">
+              adgonzalez2023@gmail.com
+            </a>
+          </p>
+
+          <p>
+            <a href="https://github.com/Adgonzalez2018/" target="_blank" rel="noopener noreferrer">
+              Github
+            </a>
+          </p>
+
+          <p>
+            <a href="https://youtube.com/@MalexCafe" target="_blank" rel="noopener noreferrer">
+              YouTube
+            </a>
+          </p>
       </div>
     </div>
   );
