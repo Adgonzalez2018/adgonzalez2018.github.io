@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./styles.css";
 
 function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<MainSite />} />
+      <Route path="/video" element={<VideoPage />} />
+    </Routes>
+  );
+}
+
+function MainSite() {
   const [projectsOpen, setProjectsOpen] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [drawingsOpen, setDrawingsOpen] = useState(false);
 
   useEffect(() => {
-    // Update time every second
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
@@ -15,7 +25,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Active link highlighting on scroll
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".sidebar a");
 
@@ -41,10 +50,7 @@ function App() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleProjects = () => {
@@ -63,18 +69,25 @@ function App() {
     return date.toLocaleDateString("en-US", options);
   };
 
+  const formatBlogDate = (date) => {
+    const options = {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    };
+    return date.toLocaleDateString("en-US", options);
+  };
+
   const drawings = [
     "EYE.PNG", "IMG_4128.jpg", "IMG_4168.jpg", "IMG_4169.JPG", "IMG_4197.JPG",
     "IMG_4233.JPG", "IMG_4248.JPG", "IMG_4283.PNG", "IMG_4292.PNG", "IMG_4293.jpg",
-    "IMG_4363.JPG", "IMG_4743.PNG", "IMG_5944.PNG", "IMG_5945.jpg", "IMG_5946.jpg",
+    "IMG_4363.JPG", "IMG_5944.PNG", "IMG_5945.jpg", "IMG_5946.jpg",
     "IMG_5947.jpg", "IMG_5948.jpg", "IMG_5949.jpg", "IMG_5950.jpg", "IMG_5952.jpg",
     "IMG_5954.jpg", "IMG_5956.jpg", "IMG_5962.PNG", "IMG_5963 2.JPG", "IMG_5963.jpg",
     "IMG_5964.jpg", "IMG_5965.jpg", "IMG_7163.JPG", "IMG_7744.jpg", "IMG_7767.jpg",
     "IMG_7769.jpg", "IMG_7770.jpg"
   ];
 
-  const [drawingsOpen, setDrawingsOpen] = useState(false);
-  // research work
   const papers = [
     {
       title: "Pressure-Aware Resource Management for Resident LLM Services ",
@@ -96,13 +109,12 @@ function App() {
     },
   ];
 
-  // Blog posts
   const blogPosts = [
     {
       title: "2026 Timeline Updates",
       date: new Date("2026-03-30"),
       content:
-      "Working on two music videos that will hopefully be out by the summer, and end-goal for the year is to start working on my own animation software. Planning on improving the film rec website until the day I die even after it's complete (which it's pretty much deployable). Also trying to finish a screenplay before summer..."
+        "Working on two music videos that will hopefully be out by the summer, and end-goal for the year is to start working on my own animation software. Planning on improving the film rec website until the day I die even after it's complete (which it's pretty much deployable). Also trying to finish a screenplay before summer..."
     },
     {
       title: "Film Recommendation",
@@ -110,7 +122,7 @@ function App() {
       content:
         "I started working on this website in early February, a film recommendation website that give you last.fm style stats of your all-time stats, weekly stats of your music. Based around your letterboxd and a AI-powered film recommendation chat, it's functional but low quality, so I'm planning on doing some experiments on the chat and trying to get better results."
     },
-        {
+    {
       title: "EFL Book",
       date: new Date("2026-03-23"),
       content:
@@ -122,7 +134,6 @@ function App() {
       content:
         "Just made a 3.5m visualizer for a 'Video Tape' inspired song, made with my friend, inspiration and ideas are in the description of the video, check it out! This is for a Google Fellowship, specifically for a Technical Motion Artist Role."
     },
-
     {
       title: "Electric Field Lines Out Now!",
       date: new Date("2026-03-12"),
@@ -147,39 +158,27 @@ function App() {
       content:
         "Started working on a new web app for film recommendations. Using collaborative filtering and content-based approaches to suggest movies based on viewing history and preferences.",
     },
-    
   ];
 
-  // Helper function to format blog post dates
-  const formatBlogDate = (date) => {
-    const options = {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    };
-    return date.toLocaleDateString("en-US", options);
-  };
-
-  // Creative Work
   const creativeWork = [
-      {
-    type: "video",
-    title: "Welcome To the Pearly Gates",
-    thumbnail: "https://img.youtube.com/vi/wQf5BrMJPtE/maxresdefault.jpg",
-    link: "https://www.youtube.com/watch?v=wQf5BrMJPtE",
-  },
-  {
-    type: "video",
-    title: "Electric Field Lines - BTS",
-    thumbnail: "https://img.youtube.com/vi/_0jGNyEQvg0/maxresdefault.jpg",
-    link: "https://www.youtube.com/watch?v=_0jGNyEQvg0",
-  },
-  {
-    type: "video",
-    title: "Electric Field Lines - Visualizer",
-    thumbnail: "https://img.youtube.com/vi/IQDgEb3meFk/maxresdefault.jpg",
-    link: "https://www.youtube.com/watch?v=IQDgEb3meFk",
-  },
+    {
+      type: "video",
+      title: "Welcome To the Pearly Gates",
+      thumbnail: "https://img.youtube.com/vi/wQf5BrMJPtE/maxresdefault.jpg",
+      link: "https://www.youtube.com/watch?v=wQf5BrMJPtE",
+    },
+    {
+      type: "video",
+      title: "Electric Field Lines - BTS",
+      thumbnail: "https://img.youtube.com/vi/_0jGNyEQvg0/maxresdefault.jpg",
+      link: "https://www.youtube.com/watch?v=_0jGNyEQvg0",
+    },
+    {
+      type: "video",
+      title: "Electric Field Lines - Visualizer",
+      thumbnail: "https://img.youtube.com/vi/IQDgEb3meFk/maxresdefault.jpg",
+      link: "https://www.youtube.com/watch?v=IQDgEb3meFk",
+    },
     {
       type: "video",
       title: "Getting Better - Beatles (Visualizer)",
@@ -196,10 +195,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* Date/Time Display */}
       <div className="datetime-display">{formatDateTime(currentTime)}</div>
 
-      {/* Sidebar Navigation */}
       <div className="sidebar">
         <nav>
           <a href="#home">HOME</a>
@@ -212,9 +209,11 @@ function App() {
             aria-controls="projects-submenu"
           >
             PROJECTS
-              </button>
-          <div id="projects-submenu"
-              className={`projects-submenu ${projectsOpen ? "open" : ""}`}>
+          </button>
+          <div
+            id="projects-submenu"
+            className={`projects-submenu ${projectsOpen ? "open" : ""}`}
+          >
             <a href="#projects-software">SOFTWARE</a>
             <a href="#projects-creative">CREATIVE</a>
           </div>
@@ -222,9 +221,7 @@ function App() {
         </nav>
       </div>
 
-      {/* Main Content */}
       <div className="main-content">
-        {/* HOME Section */}
         <section id="home">
           <div className="section-content">
             <h1>Alex Gonzalez</h1>
@@ -243,12 +240,9 @@ function App() {
           </div>
         </section>
 
-        {/* BLOG Section */}
         <section id="blog">
           <div className="section-content">
             <h2>BLOG</h2>
-
-            {/* Blog Posts */}
             <div className="blog-posts">
               {blogPosts.map((post, index) => (
                 <div key={index} className="blog-post">
@@ -263,7 +257,6 @@ function App() {
           </div>
         </section>
 
-        {/* PROJECTS - SOFTWARE Section */}
         <section id="projects-software">
           <div className="section-content">
             <h2>PROJECTS</h2>
@@ -274,7 +267,6 @@ function App() {
               have papers here.
             </p>
 
-            {/* Papers Grid */}
             <div className="papers-grid">
               {papers.map((paper, index) => (
                 <div key={index} className="paper-card">
@@ -284,19 +276,11 @@ function App() {
                       {paper.journal} • {paper.year}
                     </p>
                     <div className="paper-links">
-                      <a
-                        href={paper.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href={paper.link} target="_blank" rel="noopener noreferrer">
                         GITHUB
                       </a>
                       {paper.pdf && (
-                        <a
-                          href={paper.pdf}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
+                        <a href={paper.pdf} target="_blank" rel="noopener noreferrer">
                           PAPER
                         </a>
                       )}
@@ -308,7 +292,6 @@ function App() {
           </div>
         </section>
 
-        {/* CREATIVE Section */}
         <section id="projects-creative">
           <div className="section-content">
             <h3>CREATIVE</h3>
@@ -316,7 +299,6 @@ function App() {
               I love movies, I write and make music videos.
             </p>
 
-            {/* Creative Work Grid */}
             <div className="creative-grid">
               {creativeWork.map((work, index) => (
                 <a
@@ -328,15 +310,13 @@ function App() {
                 >
                   <div className="creative-thumbnail">
                     <img src={work.thumbnail} alt={work.title} />
-                    {work.type === "video" && (
-                      <div className="play-overlay">▶</div>
-                    )}
+                    {work.type === "video" && <div className="play-overlay">▶</div>}
                   </div>
                   <p className="creative-title">{work.title}</p>
                 </a>
               ))}
             </div>
-                        {/* Drawings Toggle */}
+
             <div className="drawings-section">
               <button
                 type="button"
@@ -363,18 +343,17 @@ function App() {
           </div>
         </section>
 
-        {/* ABOUT ME Section */}
         <section id="about">
           <div className="section-content">
             <h2>ABOUT ME</h2>
             <p className="placeholder">
-              I'm Alex, a Master's Student in Computer Engineering at NYU Graduating May 2026, 
+              I'm Alex, a Master's Student in Computer Engineering at NYU Graduating May 2026,
               currently located in New York, NY. <br />
-              My work sits at the intersection of Machine Learning and applied AI, 
-              I focus heavilty on NLP, LLM evaluation, and building reliable AI-powered systems.
-              Currently, I'm conducting research on DPO and rubric optimization, and 
+              My work sits at the intersection of Machine Learning and applied AI,
+              I focus heavily on NLP, LLM evaluation, and building reliable AI-powered systems.
+              Currently, I'm conducting research on DPO and rubric optimization, and
               independently developing a full-stack film recommendation platform powered
-              by a RAG pipeline. I'm actively looking for roles in Applied ML and AI 
+              by a RAG pipeline. I'm actively looking for roles in Applied ML and AI
               engineering where I can bridge technical rigor and real-world impact.
               <br />
               Alongside my technical/logical side of my life, I'm also just as
@@ -385,14 +364,38 @@ function App() {
         </section>
       </div>
 
-      {/* Fixed Footer Contact */}
       <div className="footer-contact">
         <p>Alex Gonzalez</p>
         <p>
           <a href="mailto:adgonzalez2023@gmail.com">adgonzalez2023@gmail.com</a>
-          <a href="https://github.com/Adgonzalez2018/" target="_blank" rel="noopener noreferrer">Github</a>
+          <a href="https://github.com/Adgonzalez2018/" target="_blank" rel="noopener noreferrer">
+            Github
+          </a>
         </p>
       </div>
+    </div>
+  );
+}
+
+function VideoPage() {
+  return (
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "black",
+      }}
+    >
+      <iframe
+        width="80%"
+        height="80%"
+        src="https://www.youtube.com/watch?v=IQDgEb3meFk"
+        title="Electric Field Lines - Visualizer"
+        allowFullScreen
+        style={{ border: "none" }}
+      ></iframe>
     </div>
   );
 }
