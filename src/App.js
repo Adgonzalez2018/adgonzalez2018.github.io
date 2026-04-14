@@ -402,7 +402,7 @@ function VideoPage() {
       <iframe
         width="80%"
         height="80%"
-        src="src="https://www.youtube.com/embed/IQDgEb3meFk""
+        src="https://www.youtube.com/embed/IQDgEb3meFk"
         title="Electric Field Lines - Visualizer"
         allowFullScreen
         style={{ border: "none" }}
