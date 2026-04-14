@@ -368,7 +368,7 @@ function MainSite() {
         <p>Alex Gonzalez</p>
         <p>
           <a href="mailto:adgonzalez2023@gmail.com">adgonzalez2023@gmail.com</a>
-          <a href="https://github.com/Adgonzalez2018/" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Adgonzalez2018/" target="_blank" rel="noopener noreferrer"style="white-space: pre-line">
             Github
           </a>
         </p>
