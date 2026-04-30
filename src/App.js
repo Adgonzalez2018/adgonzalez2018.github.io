@@ -12,7 +12,6 @@ function App() {
 }
 
 function MainSite() {
-  const [projectsOpen, setProjectsOpen] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [drawingsOpen, setDrawingsOpen] = useState(false);
 
@@ -23,39 +22,6 @@ function MainSite() {
 
     return () => clearInterval(timer);
   }, []);
-
-  useEffect(() => {
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".sidebar a");
-
-    const handleScroll = () => {
-      let current = "";
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (window.pageYOffset >= sectionTop - 200) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (
-          link.getAttribute("href") &&
-          link.getAttribute("href").substring(1) === current
-        ) {
-          link.classList.add("active");
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const toggleProjects = () => {
-    setProjectsOpen(!projectsOpen);
-  };
 
   const formatDateTime = (date) => {
     const options = {
@@ -196,10 +162,6 @@ function MainSite() {
   return (
     <div className="App">
       <div className="datetime-display">{formatDateTime(currentTime)}</div>
-
-      <div className="sidebar">
-      </div>
-
       <div className="main-content">
         <section id="home">
           <div className="section-content">
