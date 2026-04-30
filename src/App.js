@@ -198,27 +198,6 @@ function MainSite() {
       <div className="datetime-display">{formatDateTime(currentTime)}</div>
 
       <div className="sidebar">
-        <nav>
-          <a href="#home">HOME</a>
-          <a href="#blog">BLOG</a>
-          <button
-            type="button"
-            onClick={toggleProjects}
-            className="Projects-link"
-            aria-expanded={projectsOpen}
-            aria-controls="projects-submenu"
-          >
-            PROJECTS
-          </button>
-          <div
-            id="projects-submenu"
-            className={`projects-submenu ${projectsOpen ? "open" : ""}`}
-          >
-            <a href="#projects-software">SOFTWARE</a>
-            <a href="#projects-creative">CREATIVE</a>
-          </div>
-          <a href="#about">ABOUT ME</a>
-        </nav>
       </div>
 
       <div className="main-content">
@@ -347,18 +326,19 @@ function MainSite() {
           <div className="section-content">
             <h2>ABOUT ME</h2>
             <p className="placeholder">
-              I'm Alex, a Master's Student in Computer Engineering at NYU Graduating May 2026,
-              currently located in New York, NY. <br />
-              My work sits at the intersection of Machine Learning and applied AI,
-              I focus heavily on NLP, LLM evaluation, and building reliable AI-powered systems.
-              Currently, I'm conducting research on DPO and rubric optimization, and
-              independently developing a full-stack film recommendation platform powered
-              by a RAG pipeline. I'm actively looking for roles in Applied ML and AI
-              engineering where I can bridge technical rigor and real-world impact.
+              I'm Alex, a graduating Master's Student in Computer Engineering at NYU (May 2026),
+              based in New York, NY. My work sits at the intersectoin of Machine Learning  and applied AI,
+              I specialize in LLM evaluation, retrieval systems, and building reliable AI-powered pipelines.
+              I'm currently, an acknowledged collaborator on an M.S. thesis at NYU's DICE LAB (Prof. Chinmay Hegde),
+              researching adversarial rubric optimization and LLM-as-judge failure modes. I've also recently and
+              independently built a full-stack film recommendation platform using a hybrid RAG pipeline,
+              vector search, and deterministic validation layers. Previous work includes
+              ML systems engineering, font classification pipelines, and an AI-itegrated booking platform.
+              I'm actively looking for roles in Applied ML and AI Engineering where I can bridge technical rigor and
+              real-word impact.
               <br />
-              Alongside my technical/logical side of my life, I'm also just as
-              passionate about movies and storytelling. In 2025, I watched 374 movies.
-              I write screenplays, direct music videos, and recently completed a documentary.
+              Outside of reserach, I'm equally driven by movies and storytelling, I write screenplays, direct music videos,
+              I released a documentary late last year in 2025. I've just released a new music video and designed a physical book for it, that includes a compilation of all the photos, stills, and words that were included in the mv.
             </p>
           </div>
         </section>

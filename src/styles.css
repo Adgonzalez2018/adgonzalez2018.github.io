@@ -19,160 +19,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Sidebar Navigation */
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: var(--sidebar-width);
-
-  background: var(--white);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0;
-  padding: 0px 0;
-  z-index: 100;
-}
-
-.sidebar nav {
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar a {
-  color: var(--black);
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  padding: 20px 15px;
-  border-bottom: 2px solid transparent;
-  position: relative;
-  overflow: hidden;
-}
-
-.sidebar a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 100%;
-  background: var(--black);
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: -1;
-}
-
-.sidebar a:hover::before {
-  width: 100%;
-}
-
-.sidebar a:hover {
-  color: var(--white);
-}
-
-.sidebar a.active {
-  border-bottom: 2px solid var(--black);
-}
-
-.sidebar button {
-  color: var(--black);
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  padding: 20px 15px;
-  border: none;
-  background: none;
-  text-align: left;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  position: relative;
-  overflow: hidden;
-  font-family: inherit;
-}
-
-.sidebar button::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 100%;
-  background: var(--black);
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: -1;
-}
-
-.sidebar button:hover::before {
-  width: 100%;
-}
-
-.sidebar button:hover {
-  color: var(--white);
-}
-
-/* Make the PROJECTS button look like the other sidebar links */
-.sidebar .projects-link {
-  appearance: none;
-  -webkit-appearance: none;
-
-  background: transparent;
-  border: 0;
-  outline: none;
-
-  display: block;
-  width: 100%;
-
-  color: var(--black);
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 2px;
-
-  padding: 20px 15px;
-  margin: 0;
-
-  text-align: left;
-  cursor: pointer;
-
-  position: relative;
-  overflow: hidden;
-  font-family: inherit;
-}
-
-/* Same hover fill effect as your <a> links */
-.sidebar .projects-link::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 100%;
-  background: var(--black);
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: -1;
-}
-
-.sidebar .projects-link:hover::before {
-  width: 100%;
-}
-
-.sidebar .projects-link:hover {
-  color: var(--white);
-}
-
-/* Optional: nice keyboard focus */
-.sidebar .projects-link:focus-visible {
-  outline: 2px solid var(--black);
-  outline-offset: 4px;
-}
-
-
 /* Main Content Area */
 .main-content {
-  margin-left: var(--sidebar-width);
+  margin-left: 0;
   min-height: 100vh;
 }
 
@@ -228,7 +77,7 @@ p {
 .footer-contact {
   position: fixed;
   bottom: 10px;
-  right: 10px;
+  right: 0px;
   text-align: right;
   z-index: 1000;
   background: var(--white);
@@ -269,13 +118,8 @@ p {
     --sidebar-width: 100px;
   }
 
-  .sidebar a {
-    font-size: 18px;
-    padding: 15px 20px;
-  }
-
   .main-content {
-    margin-left: var(--sidebar-width);
+    margin-left: 0;
   }
 
   section {
@@ -302,7 +146,7 @@ html {
 .datetime-display {
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 0px;
   font-family: "League Gothic", sans-serif;
   font-size: 16px;
   letter-spacing: 1px;
@@ -442,26 +286,6 @@ html {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 15px;
   }
-}
-
-/* Projects Submenu */
-.projects-link {
-  cursor: pointer;
-}
-
-.projects-submenu {
-  display: none;
-}
-
-.projects-submenu.open {
-  display: flex;
-  flex-direction: column;
-}
-
-.projects-submenu a {
-  font-size: 18px;
-  padding: 15px 15px;
-  padding-left: 25px;
 }
 
 /* Video Container */
